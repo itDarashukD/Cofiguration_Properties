@@ -1,0 +1,24 @@
+#simple properties
+
+sample:
+  host: person@gmail.com
+  port: 8888
+  form: atletic
+
+  #list properties
+  streets:
+    - Solomovoy
+    - Bogushevicha
+
+  #map properties
+  personCredential:
+    - Dzmitry: Darashuk
+    - Victoriya: Danilovich
+    - Uladzislau: Danilovich
+    - Anastasia: Darashuk
+
+  #object properties
+  person:
+      name: ownerName
+      age: 10
+      telephone_number: 80297827569

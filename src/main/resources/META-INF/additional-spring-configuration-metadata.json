@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "sample.person.name",
+      "type": "java.lang.String",
+      "description": "Description for sample.person.name."
+    },
+    {
+      "name": "sample.person.age",
+      "type": "java.lang.String",
+      "description": "Description for sample.person.age."
+    },
+    {
+      "name": "sample.person.telephone_number",
+      "type": "java.lang.String",
+      "description": "Description for sample.person.telephone_number."
+    }
+
+  ] }
