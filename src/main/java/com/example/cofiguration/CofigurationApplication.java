@@ -1,7 +1,6 @@
 package com.example.cofiguration;
 
-import com.example.brands.entity.Brand;
-import com.example.brands.entity.McDonald;
+
 import com.example.brands.service.BrandServiceWithConf;
 import com.example.cofiguration.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +27,12 @@ public class CofigurationApplication {
     public void runAfterObjectCreated() {
         System.out.println("PostContruct method called");
         LocalTime userTimeToTest = createUserTimeToTest();
-        Brand brand = new McDonald();
-        brandService.getDailyPart(userTimeToTest,brand);
+//        brandService.printObjects();
+        brandService.getDailyPart(userTimeToTest,"mcDonald");
     }
 
     public  LocalTime createUserTimeToTest() {
-        LocalTime userTime = LocalTime.of(0, 00);
+        LocalTime userTime = LocalTime.of(20, 30);
         return userTime;
     }
 }

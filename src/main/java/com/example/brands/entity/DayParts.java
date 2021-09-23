@@ -9,10 +9,9 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Brand {
+public class DayParts {
 
     private String name;
     private  String timeBegin;
     private  String timeFinish;
-
 }
