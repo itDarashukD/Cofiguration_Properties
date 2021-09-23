@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.validator.constraints.Email;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,5 +25,4 @@ public class ConfigPropertiesSample {
     private List<String> streets;
     private Map<String, String> personCredential;
     private Person person;
-
 }

@@ -1,20 +1,24 @@
 package com.example.cofiguration;
 
-import com.example.cofiguration.config.ConfigPropertiesSample;
+import com.example.brands.entity.Brand;
+import com.example.brands.entity.McDonald;
+import com.example.brands.service.BrandServiceWithConf;
 import com.example.cofiguration.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalTime;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages ={"com.example"})
 public class CofigurationApplication {
 
     @Autowired
     private PersonService personService;
+
+    @Autowired
+    private BrandServiceWithConf brandService;
 
     public static void main(String[] args) {
         SpringApplication.run(CofigurationApplication.class, args);
@@ -23,7 +27,13 @@ public class CofigurationApplication {
     @PostConstruct
     public void runAfterObjectCreated() {
         System.out.println("PostContruct method called");
-        personService.getAllData();
-        personService.getPerson();
+        LocalTime userTimeToTest = createUserTimeToTest();
+        Brand brand = new McDonald();
+        brandService.getDailyPart(userTimeToTest,brand);
+    }
+
+    public  LocalTime createUserTimeToTest() {
+        LocalTime userTime = LocalTime.of(0, 00);
+        return userTime;
     }
 }
