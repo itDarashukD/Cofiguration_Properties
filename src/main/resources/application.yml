@@ -1,7 +1,42 @@
+spring:
+  profiles:
+    active:
+      - test
+
+  application:
+    name: "brands"
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+
+name: test-YAML
+environment: testing
+
+
+---
+
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+name: ${DEV_NAME:dev-YAML}
+environment: development
+
+
+
+
+
+
+
 #simple properties
 
 sample:
-  host: person@gmail.com
+  host: persongmail.com
   port: 8888
   form: atletic
 
@@ -19,6 +54,43 @@ sample:
 
   #object properties
   person:
-      name: ownerName
-      age: 10
-      telephone_number: 80297827569
+    name: ownerName
+    age: 10
+    telephone_number: 80297827569
+
+# Brand properties
+time-ranges:
+  eating:
+    kfc:
+      - name: "breakfast"
+        timeBegin: "08:00"
+        timeFinish: "10:00"
+      - name: "lunch"
+        timeBegin: "12:00"
+        timeFinish: "14:00"
+      - name: "dinner"
+        timeBegin: "17:00"
+        timeFinish: "20:00"
+      - name: "snake"
+        timeBegin: "21:00"
+        timeFinish: "22:00"
+      - name: "lateDinner"
+        timeBegin: "23:00"
+        timeFinish: "23:59"
+
+    mcDonald:
+      - name: "breakfast"
+        timeBegin: "08:30"
+        timeFinish: "10:30"
+      - name: "lunch"
+        timeBegin: "12:30"
+        timeFinish: "14:30"
+      - name: "dinner"
+        timeBegin: "17:30"
+        timeFinish: "20:30"
+      - name: "snake"
+        timeBegin: "21:30"
+        timeFinish: "22:30"
+      - name: "lateDinner"
+        timeBegin: "23:00"
+        timeFinish: "23:39"
